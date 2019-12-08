@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.57.2" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Introduction | Network</title>
+<title>Layer | Network</title>
 
 
 <link rel="stylesheet" href="/Network/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
@@ -16,7 +15,6 @@
 <link rel="icon" href="/Network/favicon.png" type="image/x-icon">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://hello-world-example.github.io/Network/index.xml" title="Network" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -46,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2fNetwork\2f "] {
+  nav ul a[href$="\2fNetwork\2f docs\2f Basic\2fLayer\2f "] {
       color: #004ed0;
   }
   </style>
@@ -103,35 +101,83 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/Network/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Introduction</strong>
+  <strong>Layer</strong>
 </header>
 
       
-<article class="markdown"><ul>
-<li><a href="https://sourceforge.net/projects/net-tools/">net-tools</a></li>
-<li><a href="https://github.com/shemminger/iproute2">iproute2</a>
+<article class="markdown">
+
+<h1 id="网络分层">网络分层</h1>
+
+<table>
+<thead>
+<tr>
+<th align="center">OSI 七层 理论模型<br />（Open System Interconnection）</th>
+<th align="center">TCP/IP 四层模型</th>
+<th>常见协议</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">应用层（Application）</td>
+<td align="center">应用层</td>
+<td>HTTP、&hellip;</td>
+</tr>
+
+<tr>
+<td align="center">表示层（Presentation）</td>
+<td align="center">/</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center">会话层（Session）</td>
+<td align="center">/</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center">传输层（Transport）</td>
+<td align="center">传输层</td>
+<td>TCP、UDP、&hellip;</td>
+</tr>
+
+<tr>
+<td align="center">网络层（Network）</td>
+<td align="center">网络层</td>
+<td>IP、ICMP、VRRP、&hellip;</td>
+</tr>
+
+<tr>
+<td align="center">数据链路层（Data Link）</td>
+<td align="center">物理链路层</td>
+<td>MAC、ARP、&hellip;</td>
+</tr>
+
+<tr>
+<td align="center">物理层（Physical）</td>
+<td align="center">/</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="../images/Layer-01.png" alt="网络分层详细架构图" /></p>
+
+<h2 id="read-more">Read More</h2>
 
 <ul>
-<li><a href="https://wiki.linuxfoundation.org/networking/iproute2">https://wiki.linuxfoundation.org/networking/iproute2</a></li>
-<li><a href="https://linoxide.com/linux-command/use-ip-command-linux">How to use IP Command in Linux with Examples</a></li>
-<li></li>
-</ul></li>
+<li><a href="https://www.yuque.com/ansir/egwww1/nkee22">OSI网络七层模型和TC/IP四层模型</a></li>
 </ul>
 </article>
 
       
-<div class="book-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/hello-world-example/Network/commit/9f180638e875573b971e68e3c7ed5d03bc86b7fc" title='Last modified Dec 8, 2019 by 杨凯彬' target="_blank" rel="noopener">
-      <img src="/Network/svg/calendar.svg" alt="Changed" /> Dec 8, 2019
-    </a>
-  </div>
+<div class="book-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/hello-world-example/Network/edit/master/HuGo/content/_index.md" target="_blank" rel="noopener">
+    <a href="https://github.com/hello-world-example/Network/edit/master/HuGo/content/docs/Basic/Layer.md" target="_blank" rel="noopener">
       <img src="/Network/svg/edit.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -144,6 +190,17 @@ https://github.com/alex-shpak/hugo-book
 
     
   
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#网络分层">网络分层</a>
+<ul>
+<li><a href="#read-more">Read More</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
 
 
 

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ss | Network</title>
+
+
+<link rel="stylesheet" href="/Network/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+
+
+
+
+<link rel="icon" href="/Network/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://hello-world-example.github.io/Network/">Network</a>
+</h2>
+
+
+
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fNetwork\2f docs\2fIproute2\2fSs\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><strong>Basic</strong>
+
+<ul>
+<li><a href="/Network/docs/Basic/Layer/">网络分层</a></li>
+<li>网络 I/O 模型</li>
+</ul></li>
+<li><strong>Transport</strong>
+
+<ul>
+<li><em><a href="/Network/docs/Transport/TCP-Connection-Status/">TCP 连接状态</a></em></li>
+</ul></li>
+<li><strong>iproute2</strong>
+
+<ul>
+<li><a href="/Network/docs/Iproute2/Install/">安装</a></li>
+<li><a href="/Network/docs/Iproute2/Ss/">ss</a></li>
+<li><em>ip</em></li>
+</ul></li>
+<li><strong>net-tools</strong>
+
+<ul>
+<li><a href="/Network/docs/Net-Tools/netstat/">netstat</a></li>
+</ul></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/Network/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Ss</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="ss">ss</h1>
+
+<p>比 <code>netstat</code> 更好用的工具，<code>iproute2</code> 包附带的另一个工具</p>
+
+<ul>
+<li>能够显示更多更详细的有关 TCP 和 连接状态 的信息</li>
+<li>比 <code>netstat</code> 更快速更高效</li>
+</ul>
+
+<h2 id="常用参数">常用参数</h2>
+
+<ul>
+<li><code>-n, --numeric</code> 不解析服务名称，同 <code>netstat</code><br /></li>
+<li><code>-a, --all</code>  显示所有套接字（sockets），同 <code>netstat</code><br /></li>
+<li><code>-l, --listening</code>  显示监听状态的套接字（sockets），同 <code>netstat</code><br /></li>
+<li><code>-t, --tcp</code> 仅显示 TCP套接字（sockets），同 <code>netstat</code><br /></li>
+<li><code>-u, --udp</code>       仅显示 UCP套接字（sockets），同 <code>netstat</code><br /></li>
+<li><code>-p, --processes</code>  显示使用套接字（socket）的进程，同 <code>netstat</code><br /></li>
+<li><code>-s, --summary</code>   显示套接字（socket）使用概况</li>
+<li><code>-i, --info</code>      显示 TCP内部信息</li>
+</ul>
+
+<h2 id="常见场景">常见场景</h2>
+
+<h3 id="一般用法">一般用法</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># TCP 链接所在的进程</span>
+ss -antp
+<span style="color:#75715e"># 监听的网络端口和所在的进程</span>
+ss -lntp </code></pre></div>
+<h3 id="filter">Filter</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 匹配远程地址和端口号</span>
+ss dst <span style="color:#ae81ff">192</span>.168.1.5
+ss dst <span style="color:#ae81ff">192</span>.168.119.113:http
+ss dst <span style="color:#ae81ff">192</span>.168.119.113:443
+
+<span style="color:#75715e"># 匹配本地地址和端口号</span>
+ss src <span style="color:#ae81ff">192</span>.168.119.103:25
+
+<span style="color:#75715e"># ss dport OP PORT 远程端口和一个数比较</span>
+<span style="color:#75715e"># ss sport OP PORT 本地端口和一个数比较</span>
+ss sport eq :22
+ss state connected sport <span style="color:#f92672">=</span> :http</code></pre></div>
+<h2 id="read-more">Read More</h2>
+
+<ul>
+<li><a href="https://wangchujiang.com/linux-command/c/ss.html">ss 命令</a></li>
+</ul>
+</article>
+
+      
+<div class="book-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/hello-world-example/Network/edit/master/HuGo/content/docs/Iproute2/Ss.md" target="_blank" rel="noopener">
+      <img src="/Network/svg/edit.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#ss">ss</a>
+<ul>
+<li><a href="#常用参数">常用参数</a></li>
+<li><a href="#常见场景">常见场景</a>
+<ul>
+<li><a href="#一般用法">一般用法</a></li>
+<li><a href="#filter">Filter</a></li>
+</ul></li>
+<li><a href="#read-more">Read More</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

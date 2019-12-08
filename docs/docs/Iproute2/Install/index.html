@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.57.2" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Introduction | Network</title>
+<title>Install | Network</title>
 
 
 <link rel="stylesheet" href="/Network/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
@@ -16,7 +15,6 @@
 <link rel="icon" href="/Network/favicon.png" type="image/x-icon">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://hello-world-example.github.io/Network/index.xml" title="Network" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -46,7 +44,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   <style>
-  nav ul a[href$="\2fNetwork\2f "] {
+  nav ul a[href$="\2fNetwork\2f docs\2fIproute2\2fInstall\2f "] {
       color: #004ed0;
   }
   </style>
@@ -103,35 +101,43 @@ https://github.com/alex-shpak/hugo-book
   <label for="menu-control">
     <img src="/Network/svg/menu.svg" alt="Menu" />
   </label>
-  <strong>Introduction</strong>
+  <strong>Install</strong>
 </header>
 
       
-<article class="markdown"><ul>
-<li><a href="https://sourceforge.net/projects/net-tools/">net-tools</a></li>
-<li><a href="https://github.com/shemminger/iproute2">iproute2</a>
+<article class="markdown">
+
+<h1 id="安装-iproute2">安装 iproute2</h1>
+
+<h2 id="mac">MAC</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install iproute2mac</code></pre></div>
+<blockquote>
+<p><a href="https://github.com/brona/iproute2mac">https://github.com/brona/iproute2mac</a></p>
 
 <ul>
-<li><a href="https://wiki.linuxfoundation.org/networking/iproute2">https://wiki.linuxfoundation.org/networking/iproute2</a></li>
-<li><a href="https://linoxide.com/linux-command/use-ip-command-linux">How to use IP Command in Linux with Examples</a></li>
-<li></li>
-</ul></li>
+<li>没有提供 <code>ss</code> 的实现 <a href="https://github.com/brona/iproute2mac/issues/20">ss command not found?</a></li>
 </ul>
+</blockquote>
+
+<h2 id="linux">Linux</h2>
+
+<p>新版本一般都自带</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install -y iproute2</code></pre></div>
+<h2 id="与-net-tools-的对比">与 net-tools 的对比</h2>
+
+<blockquote>
+<p><a href="https://linoxide.com/linux-command/use-ip-command-linux">https://linoxide.com/linux-command/use-ip-command-linux</a></p>
+</blockquote>
+
+<p><img src="https://linoxide.com/wp-content/uploads/2014/05/Linux-Nettools-vs-Iproute2.png" alt="" /></p>
 </article>
 
       
-<div class="book-footer justify-between">
-  
-  <div>
-    
-    <a href="https://github.com/hello-world-example/Network/commit/9f180638e875573b971e68e3c7ed5d03bc86b7fc" title='Last modified Dec 8, 2019 by 杨凯彬' target="_blank" rel="noopener">
-      <img src="/Network/svg/calendar.svg" alt="Changed" /> Dec 8, 2019
-    </a>
-  </div>
+<div class="book-footer justify-end">
   
   
   <div>
-    <a href="https://github.com/hello-world-example/Network/edit/master/HuGo/content/_index.md" target="_blank" rel="noopener">
+    <a href="https://github.com/hello-world-example/Network/edit/master/HuGo/content/docs/Iproute2/Install.md" target="_blank" rel="noopener">
       <img src="/Network/svg/edit.svg" alt="Edit" /> Edit this page
     </a>
   </div>
@@ -144,6 +150,19 @@ https://github.com/alex-shpak/hugo-book
 
     
   
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#安装-iproute2">安装 iproute2</a>
+<ul>
+<li><a href="#mac">MAC</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#与-net-tools-的对比">与 net-tools 的对比</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
 
 
 

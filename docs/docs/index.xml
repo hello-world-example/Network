@@ -11,13 +11,40 @@
     
     <item>
       <title></title>
-      <link>https://hello-world-example.github.io/Network/docs/hidden/</link>
+      <link>https://hello-world-example.github.io/Network/docs/Basic/Layer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hello-world-example.github.io/Network/docs/hidden/</guid>
-      <description>bookHidden: true
-This page is hidden in menu Quondam non pater est dignior ille Eurotas Latent te facies Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
- Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor  Cum honorum Latona O fallor in sustinui iussorum equidem.</description>
+      <guid>https://hello-world-example.github.io/Network/docs/Basic/Layer/</guid>
+      <description> 网络分层    OSI 七层 理论模型
+（Open System Interconnection） TCP/IP 四层模型 常见协议     应用层（Application） 应用层 HTTP、&amp;hellip;   表示层（Presentation） /    会话层（Session） /    传输层（Transport） 传输层 TCP、UDP、&amp;hellip;   网络层（Network） 网络层 IP、ICMP、VRRP、&amp;hellip;   数据链路层（Data Link） 物理链路层 MAC、ARP、&amp;hellip;   物理层（Physical） /     Read More  OSI网络七层模型和TC/IP四层模型  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hello-world-example.github.io/Network/docs/Iproute2/Install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/Network/docs/Iproute2/Install/</guid>
+      <description> 安装 iproute2 MAC brew install iproute2mac  https://github.com/brona/iproute2mac
+ 没有提供 ss 的实现 ss command not found?   Linux 新版本一般都自带
+yum install -y iproute2 与 net-tools 的对比  https://linoxide.com/linux-command/use-ip-command-linux
+ </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hello-world-example.github.io/Network/docs/Iproute2/Ss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/Network/docs/Iproute2/Ss/</guid>
+      <description>ss 比 netstat 更好用的工具，iproute2 包附带的另一个工具
+ 能够显示更多更详细的有关 TCP 和 连接状态 的信息 比 netstat 更快速更高效  常用参数  -n, --numeric 不解析服务名称，同 netstat
+ -a, --all 显示所有套接字（sockets），同 netstat
+ -l, --listening 显示监听状态的套接字（sockets），同 netstat
+ -t, --tcp 仅显示 TCP套接字（sockets），同 netstat
+ -u, --udp 仅显示 UCP套接字（sockets），同 netstat
+ -p, --processes 显示使用套接字（socket）的进程，同 netstat
+ -s, --summary 显示套接字（socket）使用概况 -i, --info 显示 TCP内部信息  常见场景 一般用法 # TCP 链接所在的进程 ss -antp # 监听的网络端口和所在的进程 ss -lntp  Filter # 匹配远程地址和端口号 ss dst 192.</description>
     </item>
     
     <item>
@@ -29,6 +56,15 @@ This page is hidden in menu Quondam non pater est dignior ille Eurotas Latent te
       <description>netstat  Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
 打印网络连接、路由表、连接的数据统计、伪装连接以及广播域成员。
  常用参数  -a --all 显示所有选项，默认不显示 LISTEN 相关  -t --tcp 查询 TCP 链接 -u --udp 查询 UDP 链接 -x --unix 传车 UNIX 链接  -n --numeric 直接显示 IP 地址，而不是域名 -p --programs 显示 PID，运行在 root 权限之下，才能得到运行在 root 权限下的进程名  MAC 下的 -p 是 protocl 的意思，无法显示 PID，可以用 lsof -i :18080 代替显示端口所在 PID  -l --listening 显示监控中的服务器的 Socket</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hello-world-example.github.io/Network/docs/Transport/TCP-Connection-Status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/Network/docs/Transport/TCP-Connection-Status/</guid>
+      <description> TCP 连接状态 Read More  IBM TCP connection status netstat 用法及 TCP state 解析  </description>
     </item>
     
   </channel>
