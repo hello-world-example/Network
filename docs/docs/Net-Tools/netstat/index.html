@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netstat | Network</title>
+
+
+<link rel="stylesheet" href="/Network/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+
+
+
+
+<link rel="icon" href="/Network/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://hello-world-example.github.io/Network/">Network</a>
+</h2>
+
+
+
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fNetwork\2f docs\2fNet-Tools\2fnetstat\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><strong>net-tools</strong>
+
+<ul>
+<li><a href="/Network/docs/Net-Tools/netstat/">netstat</a></li>
+</ul></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/Network/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Netstat</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="netstat">netstat</h1>
+
+<blockquote>
+<p>Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships</p>
+
+<p>打印网络连接、路由表、连接的数据统计、伪装连接以及广播域成员。</p>
+</blockquote>
+
+<h2 id="常用参数">常用参数</h2>
+
+<ul>
+<li><code>-a --all</code> 显示所有选项，默认不显示 LISTEN 相关
+
+<ul>
+<li><code>-t --tcp</code> 查询 <strong>TCP 链接</strong></li>
+<li><code>-u --udp</code> 查询 UDP 链接</li>
+<li><code>-x --unix</code> 传车 UNIX 链接</li>
+</ul></li>
+<li><code>-n --numeric</code> 直接<strong>显示 IP 地址</strong>，而不是域名</li>
+<li><code>-p --programs</code> <strong>显示 PID</strong>，运行在 root 权限之下，才能得到运行在 root 权限下的进程名
+
+<ul>
+<li>MAC 下的 <code>-p</code> 是 <code>protocl</code> 的意思，无法显示 PID，可以用 <code>lsof -i :18080</code> 代替显示端口所在 PID</li>
+</ul></li>
+
+<li><p><code>-l --listening</code> <strong>显示监控中的服务器的 Socket</strong></p></li>
+
+<li><p><code>-e --extend</code> 其他相关信息，比如搭配 <code>-pe</code> 显示进程用户</p></li>
+
+<li><p><code>-i --interfaces</code> 网卡信息</p></li>
+
+<li><p><code>-r --route</code>：显示Routing Table</p></li>
+
+<li><p><code>-s --statistice</code>：显示网络工作信息统计表；</p></li>
+</ul>
+
+<h2 id="常见用法">常见用法</h2>
+
+<h3 id="列出所有的链接">列出所有的链接</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">netstat -an     <span style="color:#75715e"># 列出所有当前的连接</span>
+netstat -ant    <span style="color:#75715e"># 过滤出 tcp</span>
+netstat -anu    <span style="color:#75715e"># 过滤出 udp</span></code></pre></div>
+<h3 id="列出监听中的连接">列出监听中的连接</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 不要使用 -a 选项，否则 netstat 会列出所有连接，而不仅仅是监听端口</span>
+netstat -ntl
+<span style="color:#75715e"># 或</span>
+netstat -ant | grep LISTEN</code></pre></div>
+<h2 id="read-more">Read More</h2>
+
+<ul>
+<li><a href="http://net-tools.sourceforge.net/man/netstat.8.html">netstat Manual</a></li>
+<li><a href="https://linux.cn/article-2434-1.html">netstat 的10个基本用法</a></li>
+<li><a href="https://wangchujiang.com/linux-command/c/netstat.html">netstat 中文</a></li>
+</ul>
+</article>
+
+      
+<div class="book-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/hello-world-example/Network/edit/master/HuGo/content/docs/Net-Tools/netstat.md" target="_blank" rel="noopener">
+      <img src="/Network/svg/edit.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#netstat">netstat</a>
+<ul>
+<li><a href="#常用参数">常用参数</a></li>
+<li><a href="#常见用法">常见用法</a>
+<ul>
+<li><a href="#列出所有的链接">列出所有的链接</a></li>
+<li><a href="#列出监听中的连接">列出监听中的连接</a></li>
+</ul></li>
+<li><a href="#read-more">Read More</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>
