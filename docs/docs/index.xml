@@ -60,6 +60,16 @@ yum install -y iproute2 与 net-tools 的对比  https://linoxide.com/linux-comm
     
     <item>
       <title></title>
+      <link>https://hello-world-example.github.io/Network/docs/Tools/httping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/Network/docs/Tools/httping/</guid>
+      <description>httping  Httping is like &amp;lsquo;ping&amp;rsquo; but for http-requests. Give it an url, and it&amp;rsquo;ll show you how long it takes to connect, send a request and retrieve the reply (only the headers). Be aware that the transmission across the network also takes time! So it measures the latency of the webserver + network. It supports, of course, IPv6.
+ httping 类似于 ping 命令，但是是发送 http 请求， 给它一个 url 链接， 它会返回请求这个链接的 连接、发送请求、接收响应的时间。主要用来衡量 服务器和网络延时。</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://hello-world-example.github.io/Network/docs/Transport/TCP-Connection-Status/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

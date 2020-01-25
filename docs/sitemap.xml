@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://hello-world-example.github.io/Network/_sidebar/</loc>
-    <lastmod>2019-12-08T17:34:46+08:00</lastmod>
+    <lastmod>2019-12-09T00:19:11+08:00</lastmod>
   </url>
   
   <url>
@@ -24,6 +24,11 @@
   
   <url>
     <loc>https://hello-world-example.github.io/Network/docs/Net-Tools/netstat/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hello-world-example.github.io/Network/docs/Tools/httping/</loc>
     <priority>0</priority>
   </url>
   

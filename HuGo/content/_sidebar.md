@@ -15,5 +15,7 @@ headless: true
   - *ip*
 - **net-tools**
   - [netstat]({{< relref "/docs/Net-Tools/netstat.md" >}})
+- **Tools**
+  - [httping]({{< relref "/docs/Tools/httping.md" >}})
 
 

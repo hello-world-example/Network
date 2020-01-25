@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hello-world-example.github.io/Network/_sidebar/</guid>
-      <description> Basic  网络分层 网络 I/O 模型  Transport  TCP 连接状态  iproute2  安装 ss ip  net-tools  netstat   </description>
+      <description> Basic  网络分层 网络 I/O 模型  Transport  TCP 连接状态  iproute2  安装 ss ip  net-tools  netstat  Tools  httping   </description>
     </item>
     
     <item>
@@ -65,6 +65,16 @@ yum install -y iproute2 与 net-tools 的对比  https://linoxide.com/linux-comm
       <description>netstat  Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
 打印网络连接、路由表、连接的数据统计、伪装连接以及广播域成员。
  常用参数  -a --all 显示所有选项，默认不显示 LISTEN 相关  -t --tcp 查询 TCP 链接 -u --udp 查询 UDP 链接 -x --unix 传车 UNIX 链接  -n --numeric 直接显示 IP 地址，而不是域名 -p --programs 显示 PID，运行在 root 权限之下，才能得到运行在 root 权限下的进程名  MAC 下的 -p 是 protocl 的意思，无法显示 PID，可以用 lsof -i :18080 代替显示端口所在 PID  -l --listening 显示监控中的服务器的 Socket</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hello-world-example.github.io/Network/docs/Tools/httping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/Network/docs/Tools/httping/</guid>
+      <description>httping  Httping is like &amp;lsquo;ping&amp;rsquo; but for http-requests. Give it an url, and it&amp;rsquo;ll show you how long it takes to connect, send a request and retrieve the reply (only the headers). Be aware that the transmission across the network also takes time! So it measures the latency of the webserver + network. It supports, of course, IPv6.
+ httping 类似于 ping 命令，但是是发送 http 请求， 给它一个 url 链接， 它会返回请求这个链接的 连接、发送请求、接收响应的时间。主要用来衡量 服务器和网络延时。</description>
     </item>
     
     <item>
