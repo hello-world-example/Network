@@ -15,7 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hello-world-example.github.io/Network/_sidebar/</guid>
-      <description> Basic  网络分层 网络 I/O 模型  Transport  TCP 连接状态  iproute2  安装 ss ip  net-tools  netstat  Tools  httping   </description>
+      <description> Basic  网络分层 网络 I/O 模型  Transport  TCP 连接状态  iproute2  安装 ss ip  net-tools  netstat  Tools  httping nmap   </description>
     </item>
     
     <item>
@@ -75,6 +75,15 @@ yum install -y iproute2 与 net-tools 的对比  https://linoxide.com/linux-comm
       <guid>https://hello-world-example.github.io/Network/docs/Tools/httping/</guid>
       <description>httping  Httping is like &amp;lsquo;ping&amp;rsquo; but for http-requests. Give it an url, and it&amp;rsquo;ll show you how long it takes to connect, send a request and retrieve the reply (only the headers). Be aware that the transmission across the network also takes time! So it measures the latency of the webserver + network. It supports, of course, IPv6.
  httping 类似于 ping 命令，但是是发送 http 请求， 给它一个 url 链接， 它会返回请求这个链接的 连接、发送请求、接收响应的时间。主要用来衡量 服务器和网络延时。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hello-world-example.github.io/Network/docs/Tools/nmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hello-world-example.github.io/Network/docs/Tools/nmap/</guid>
+      <description>nmap   nmap 官网 nmap 中文网   简介  网络扫描和嗅探工具包 系统漏洞扫描之王  常见用法 端口扫描 # 不指定要扫描的端口，默认扫描 1-1024, 再加上 https://svn.nmap.org/nmap/nmap-services 著名端口 ᐅ nmap 127.0.0.1 # 扫描所有端口，可能需要 20分钟 ᐅ nmap 127.0.0.1 -p1-65535 # 多个范围用 逗号分割 ᐅ nmap 127.0.0.1 -p1000-2000,9999,8080-9000 # 结果示例 Nmap scan report for localhost (127.0.0.1) Host is up (0.00024s latency). Not shown: 962 closed ports, 29 filtered ports PORT STATE SERVICE 22/tcp open ssh 80/tcp open http 445/tcp open microsoft-ds 548/tcp open afp 1086/tcp open cplscrambler-lg 1087/tcp open cplscrambler-in 1089/tcp open ff-annunc 7070/tcp open realserver 10000/tcp open snet-sensor-mgmt IP 扫描 # 扫描多个 IP ᐅ nmap 127.</description>
     </item>
     
     <item>

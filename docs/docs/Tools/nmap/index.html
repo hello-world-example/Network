@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nmap | Network</title>
+
+
+<link rel="stylesheet" href="/Network/book.min.79de1f7861b0c98f453c0a93bebf3608a280809e417787746c373699639900d7.css">
+
+
+
+
+<link rel="icon" href="/Network/favicon.png" type="image/x-icon">
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav>
+<h2 class="book-brand">
+  <a href="https://hello-world-example.github.io/Network/">Network</a>
+</h2>
+
+
+
+
+
+
+    
+  
+  
+  
+
+  <style>
+  nav ul a[href$="\2fNetwork\2f docs\2fTools\2fnmap\2f "] {
+      color: #004ed0;
+  }
+  </style>
+
+<ul>
+<li><strong>Basic</strong>
+
+<ul>
+<li><a href="/Network/docs/Basic/Layer/">网络分层</a></li>
+<li>网络 I/O 模型</li>
+</ul></li>
+<li><strong>Transport</strong>
+
+<ul>
+<li><em><a href="/Network/docs/Transport/TCP-Connection-Status/">TCP 连接状态</a></em></li>
+</ul></li>
+<li><strong>iproute2</strong>
+
+<ul>
+<li><a href="/Network/docs/Iproute2/Install/">安装</a></li>
+<li><a href="/Network/docs/Iproute2/Ss/">ss</a></li>
+<li><em>ip</em></li>
+</ul></li>
+<li><strong>net-tools</strong>
+
+<ul>
+<li><a href="/Network/docs/Net-Tools/netstat/">netstat</a></li>
+</ul></li>
+<li><strong>Tools</strong>
+
+<ul>
+<li><a href="/Network/docs/Tools/httping/">httping</a></li>
+<li><a href="/Network/docs/Tools/nmap/">nmap</a></li>
+</ul></li>
+</ul>
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+    </aside>
+
+    <div class="book-page">
+      <header class="flex align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="/Network/svg/menu.svg" alt="Menu" />
+  </label>
+  <strong>Nmap</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="nmap">nmap</h1>
+
+<blockquote>
+<ul>
+<li><a href="https://nmap.org/">nmap 官网</a></li>
+<li><a href="http://www.nmap.com.cn/">nmap 中文网</a></li>
+</ul>
+</blockquote>
+
+<h2 id="简介">简介</h2>
+
+<ul>
+<li>网络扫描和嗅探工具包</li>
+<li>系统漏洞扫描之王</li>
+</ul>
+
+<h2 id="常见用法">常见用法</h2>
+
+<h3 id="端口扫描">端口扫描</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 不指定要扫描的端口，默认扫描 1-1024, 再加上 https://svn.nmap.org/nmap/nmap-services 著名端口</span>
+ᐅ nmap <span style="color:#ae81ff">127</span>.0.0.1
+<span style="color:#75715e"># 扫描所有端口，可能需要 20分钟</span>
+ᐅ nmap <span style="color:#ae81ff">127</span>.0.0.1 -p1-65535
+<span style="color:#75715e"># 多个范围用 逗号分割</span>
+ᐅ nmap <span style="color:#ae81ff">127</span>.0.0.1 -p1000-2000,9999,8080-9000
+
+
+<span style="color:#75715e"># 结果示例</span>
+Nmap scan report <span style="color:#66d9ef">for</span> localhost <span style="color:#f92672">(</span><span style="color:#ae81ff">127</span>.0.0.1<span style="color:#f92672">)</span>
+Host is up <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.00024s latency<span style="color:#f92672">)</span>.
+Not shown: <span style="color:#ae81ff">962</span> closed ports, <span style="color:#ae81ff">29</span> filtered ports
+PORT      STATE SERVICE
+<span style="color:#ae81ff">22</span>/tcp    open  ssh
+<span style="color:#ae81ff">80</span>/tcp    open  http
+<span style="color:#ae81ff">445</span>/tcp   open  microsoft-ds
+<span style="color:#ae81ff">548</span>/tcp   open  afp
+<span style="color:#ae81ff">1086</span>/tcp  open  cplscrambler-lg
+<span style="color:#ae81ff">1087</span>/tcp  open  cplscrambler-in
+<span style="color:#ae81ff">1089</span>/tcp  open  ff-annunc
+<span style="color:#ae81ff">7070</span>/tcp  open  realserver
+<span style="color:#ae81ff">10000</span>/tcp open  snet-sensor-mgmt</code></pre></div>
+<h3 id="ip-扫描">IP 扫描</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 扫描多个 IP</span>
+ᐅ nmap <span style="color:#ae81ff">127</span>.0.0.1  <span style="color:#ae81ff">192</span>.168.1.1
+
+<span style="color:#75715e"># 多个用逗号分割</span>
+ᐅ nmap <span style="color:#ae81ff">192</span>.168.1.1,2,3,4
+<span style="color:#75715e"># 连续的 IP</span>
+ᐅ nmap <span style="color:#ae81ff">192</span>.168.1.1-4
+Nmap scan report <span style="color:#66d9ef">for</span> <span style="color:#ae81ff">192</span>.168.1.1
+Host is up <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.12s latency<span style="color:#f92672">)</span>.
+Not shown: <span style="color:#ae81ff">998</span> filtered ports
+PORT     STATE SERVICE
+<span style="color:#ae81ff">80</span>/tcp   open  http
+<span style="color:#ae81ff">1900</span>/tcp open  upnp
+Nmap <span style="color:#66d9ef">done</span>: <span style="color:#ae81ff">4</span> IP addresses <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> host up<span style="color:#f92672">)</span> scanned in <span style="color:#ae81ff">15</span>.11 seconds
+
+<span style="color:#75715e"># 扫描一个子网网段所有IP</span>
+ᐅ nmap <span style="color:#ae81ff">192</span>.168.1.0/24
+<span style="color:#75715e"># 排除某个 IP</span>
+ᐅ nmap <span style="color:#ae81ff">192</span>.168.1.0/24  --exclude <span style="color:#ae81ff">192</span>.168.1.162</code></pre></div>
+<h2 id="read-more">Read More</h2>
+
+<ul>
+<li><a href="https://crayon-xin.github.io/2018/08/12/nmap%E8%B6%85%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">nmap超详细使用指南</a></li>
+</ul>
+</article>
+
+      
+<div class="book-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/hello-world-example/Network/edit/master/HuGo/content/docs/Tools/nmap.md" target="_blank" rel="noopener">
+      <img src="/Network/svg/edit.svg" alt="Edit" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
+
+      
+    </div>
+
+    
+  
+
+  <aside class="book-toc level-3 fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#nmap">nmap</a>
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#常见用法">常见用法</a>
+<ul>
+<li><a href="#端口扫描">端口扫描</a></li>
+<li><a href="#ip-扫描">IP 扫描</a></li>
+</ul></li>
+<li><a href="#read-more">Read More</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+  
+  
+  
+</body>
+
+</html>

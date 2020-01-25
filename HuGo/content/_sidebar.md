@@ -17,5 +17,6 @@ headless: true
   - [netstat]({{< relref "/docs/Net-Tools/netstat.md" >}})
 - **Tools**
   - [httping]({{< relref "/docs/Tools/httping.md" >}})
+  - [nmap]({{< relref "/docs/Tools/nmap.md" >}})
 
 
